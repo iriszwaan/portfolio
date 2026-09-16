@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Iris Zwaan | Laten We Praten</title>
+  <meta name="description" content="Neem contact op met Iris Zwaan, CMD student aan Avans Hogeschool Breda. Samenwerken, brainstormen of een vraag stellen? Stuur een bericht!">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="images/logo.png">
+</head>
+<body>
+
+  <div class="site-frame">
+    <!-- Vaste Header met Logo, Darkmode & Menu -->
+    <header class="site-header">
+      <a href="index.html" class="site-logo" aria-label="Iris Zwaan Home">
+        <img src="images/logo.png" alt="Logo Iris Zwaan" class="logo-img">
+      </a>
+
+      <div class="header-controls">
+        <!-- Thema knop (Dagmodus / Nachtmodus) -->
+        <button id="theme-toggle" class="icon-btn" aria-label="Dagmodus actief — klik voor nachtmodus" data-tooltip="Nachtmodus">
+          <img src="images/icons/dagmodus.png" alt="Dagmodus zonnetje">
+        </button>
+
+        <button id="menu-toggle" class="icon-btn" aria-label="Open menu" data-tooltip="Menu" aria-expanded="false">
+          <img src="images/icons/menu.png" alt="Hamburgermenu">
+        </button>
+      </div>
+    </header>
+
+    <!-- Marquee Banner -->
+    <div class="marquee-wrapper" aria-hidden="true">
+      <div class="marquee-content">
+        <span class="marquee-text">
+          <span>Let's Connect</span>
+          <span class="marquee-star">✦</span>
+          <span>Samenwerken aan een verhaal?</span>
+          <span class="marquee-star">✦</span>
+          <span>Iris Zwaan &bull; Communicatie &amp; Multimedia Design</span>
+          <span class="marquee-star">✦</span>
+          <span>Avans Hogeschool Breda</span>
+          <span class="marquee-star">✦</span>
+        </span>
+        <span class="marquee-text">
+          <span>Let's Connect</span>
+          <span class="marquee-star">✦</span>
+          <span>Samenwerken aan een verhaal?</span>
+          <span class="marquee-star">✦</span>
+          <span>Iris Zwaan &bull; Communicatie &amp; Multimedia Design</span>
+          <span class="marquee-star">✦</span>
+          <span>Avans Hogeschool Breda</span>
+          <span class="marquee-star">✦</span>
+        </span>
+      </div>
+    </div>
+
+    <!-- Pagina Introductie -->
+    <div class="portfolio-page-header">
+      <div class="badge-subtitel" style="margin-bottom: 1rem;">Contact &amp; Connect</div>
+      <h1 class="section-title">Laten we praten</h1>
+      <p class="section-subtitle">Heb je een idee, vraag of wil je samenwerken? Laat het me weten!</p>
+    </div>
+
+    <!-- Contact Grid Sectie -->
+    <main class="contact-section">
+      <div class="contact-grid">
+        
+        <!-- Linkerkolom: Informatie & Notitie als polaroid kaart met washi tape -->
+        <div class="contact-info-card polaroid-card">
+          <div class="washi-tape tape-tl" aria-hidden="true"></div>
+          <h2>Contactgegevens</h2>
+          
+          <p class="contact-intro-p">
+            Of het nu gaat om een creatieve samenwerking, feedback op mijn projecten of een goed gesprek over menselijk gedrag en storytelling: mijn inbox staat altijd open.
+          </p>
+
+          <ul class="contact-details-list">
+            <li class="contact-detail-item">
+              <span class="detail-label">E-mail</span>
+              <a href="mailto:irislouisezwaan@gmail.com" class="detail-value">irislouisezwaan@gmail.com</a>
+            </li>
+
+            <li class="contact-detail-item">
+              <span class="detail-label">Instagram</span>
+              <span class="detail-value">Coming Soon</span>
+            </li>
+
+            <li class="contact-detail-item">
+              <span class="detail-label">Locatie</span>
+              <span class="detail-value">Breda / Nederland</span>
+            </li>
+
+            <li class="contact-detail-item">
+              <span class="detail-label">Studie</span>
+              <span class="detail-value">Avans Hogeschool Breda &bull; CMD</span>
+            </li>
+          </ul>
+
+          <div class="scrapbook-quote-card" style="margin-top: 2rem;">
+            <div class="scrapbook-quote" style="font-size: 1.15rem;">
+              “Creativiteit is een manier om vragen te onderzoeken en antwoorden zichtbaar te maken.”
+            </div>
+            <div class="scrapbook-quote-author">
+              ✎ Iris Zwaan
+            </div>
+          </div>
+        </div>
+
+        <!-- Rechterkolom: Interactief Formulier als polaroid kaart met washi tape -->
+        <div class="contact-form-card polaroid-card">
+          <div class="washi-tape tape-tr" aria-hidden="true"></div>
+          
+          <h2 class="form-title">Stuur een bericht</h2>
+          <div class="form-subtitle">✎ Ik reageer zo snel mogelijk!</div>
+
+          <form id="contact-form" autocomplete="off">
+            <div class="form-group">
+              <label for="naam" class="form-label">Je Naam</label>
+              <input type="text" id="naam" name="naam" class="form-input" placeholder="Bijv. Sarah de Vries" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-label">Je E-mailadres</label>
+              <input type="email" id="email" name="email" class="form-input" placeholder="naam@voorbeeld.nl" required>
+            </div>
+
+            <div class="form-group">
+              <label for="onderwerp" class="form-label">Onderwerp</label>
+              <input type="text" id="onderwerp" name="onderwerp" class="form-input" placeholder="Project, idee, kop koffie..." required>
+            </div>
+
+            <div class="form-group">
+              <label for="bericht" class="form-label">Je Bericht</label>
+              <textarea id="bericht" name="bericht" class="form-textarea" placeholder="Vertel me waar ik je mee kan helpen of waar je aan denkt..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              <span>Verstuur Bericht</span>
+              <span aria-hidden="true">&rarr;</span>
+            </button>
+
+            <!-- Bevestigingsbericht na verzenden -->
+            <div id="form-status" class="form-status-msg" role="status"></div>
+          </form>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <img src="images/logo.png" alt="Logo Iris Zwaan" class="footer-logo">
+          <span class="footer-tagline">Ontwerp &bull; Storytelling &bull; Verbeelding</span>
+        </div>
+
+        <ul class="footer-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="about.html">About Me</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="footer-copy">
+          &copy; 2026 Iris Zwaan &bull; Avans Hogeschool Breda &bull; CMD
+        </div>
+      </div>
+    </footer>
+
+    <!-- Lightbox Modal voor eventuele afbeeldingen met kruisje rechtsboven -->
+    <div id="lightbox-modal" class="lightbox-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Afbeelding vergroten">
+      <div class="lightbox-backdrop"></div>
+      <div class="lightbox-dialog">
+        <button id="lightbox-close" class="lightbox-close-btn" aria-label="Sluit vergroting (Esc)">&times;</button>
+        <div class="lightbox-media-wrap">
+          <img id="lightbox-img" src="" alt="" class="lightbox-full-img">
+        </div>
+        <div id="lightbox-caption" class="lightbox-caption"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hamburger Overlay Navigatie -->
+  <div id="nav-overlay" class="nav-overlay" role="dialog" aria-modal="true" aria-label="Navigatiemenu">
+    <div class="nav-overlay-header">
+      <div class="site-logo">
+        <img src="images/logo.png" alt="Logo Iris Zwaan" class="logo-img">
+      </div>
+      <button id="menu-close" class="close-btn" aria-label="Sluit menu">&times;</button>
+    </div>
+
+    <div class="nav-overlay-content">
+      <ul class="overlay-menu-list">
+        <li class="overlay-menu-item">
+          <a href="index.html" class="overlay-menu-link">
+            <span class="link-num">01</span>
+            <span>Home</span>
+          </a>
+        </li>
+        <li class="overlay-menu-item">
+          <a href="portfolio.html" class="overlay-menu-link">
+            <span class="link-num">02</span>
+            <span>Portfolio</span>
+          </a>
+        </li>
+        <li class="overlay-menu-item">
+          <a href="about.html" class="overlay-menu-link">
+            <span class="link-num">03</span>
+            <span>About Me</span>
+          </a>
+        </li>
+        <li class="overlay-menu-item">
+          <a href="contact.html" class="overlay-menu-link">
+            <span class="link-num">04</span>
+            <span>Contact</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="nav-overlay-footer">
+      <div>CMD Student &bull; Avans Hogeschool Breda</div>
+      <div class="nav-socials">
+        <a href="mailto:irislouisezwaan@gmail.com">irislouisezwaan@gmail.com</a>
+        <span>&bull;</span>
+        <span>Instagram (Coming Soon)</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

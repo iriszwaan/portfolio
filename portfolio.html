@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — Iris Zwaan | Projecten &amp; Verhalen</title>
+  <meta name="description" content="Bekijk het portfolio van Iris Zwaan, CMD student aan Avans Hogeschool Breda. Project 1: Hoe ziet goed genoeg eruit? Onderzoek naar maatschappelijke druk, ideaalbeelden en imperfectie.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="images/logo.png">
+</head>
+<body>
+
+  <div class="site-frame">
+    <!-- Vaste Header met Logo, Darkmode & Menu -->
+    <header class="site-header">
+      <a href="index.html" class="site-logo" aria-label="Iris Zwaan Home">
+        <img src="images/logo.png" alt="Logo Iris Zwaan" class="logo-img">
+      </a>
+
+      <div class="header-controls">
+        <!-- Thema knop (Dagmodus / Nachtmodus) -->
+        <button id="theme-toggle" class="icon-btn" aria-label="Dagmodus actief — klik voor nachtmodus" data-tooltip="Nachtmodus">
+          <img src="images/icons/dagmodus.png" alt="Dagmodus zonnetje">
+        </button>
+
+        <button id="menu-toggle" class="icon-btn" aria-label="Open menu" data-tooltip="Menu" aria-expanded="false">
+          <img src="images/icons/menu.png" alt="Hamburgermenu">
+        </button>
+      </div>
+    </header>
+
+    <!-- Pagina Introductie -->
+    <div class="portfolio-page-header">
+      <div class="badge-subtitel" style="margin-bottom: 1rem;">Geselecteerd Werk</div>
+      <h1 class="section-title">Portfolio</h1>
+      <p class="section-subtitle">Onderzoek, visuele verhalen en maatschappelijk conceptontwerp</p>
+    </div>
+
+    <!-- Project 1 Spread (Conform styleguide wireframe) -->
+    <main class="book-spread-container">
+
+      <!-- Project Navigatie Knoppen Bovenaan (knoplinks.png & knoprechts.png) -->
+      <nav class="project-nav-bar" aria-label="Project navigatie bovenaan">
+        <button id="prev-project-btn-top" class="project-nav-btn prev-project-trigger" aria-label="Vorig project" data-tooltip="Vorig project">
+          <img src="images/icons/knoplinks.png" alt="Pijl vorig project" class="nav-arrow-img">
+          <span class="nav-btn-text">Vorig project</span>
+        </button>
+
+        <div class="project-nav-meta">
+          <span class="project-counter-badge">Project <strong>01</strong> / 04</span>
+          <span class="project-active-title">Hoe ziet “goed genoeg” eruit?</span>
+        </div>
+
+        <button id="next-project-btn-top" class="project-nav-btn next-project-trigger" aria-label="Volgend project" data-tooltip="Volgend project">
+          <span class="nav-btn-text">Volgend project</span>
+          <img src="images/icons/knoprechts.png" alt="Pijl volgend project" class="nav-arrow-img">
+        </button>
+      </nav>
+
+      <article class="book-spread-card">
+        <!-- Project Kopstuk -->
+        <div class="project-header-meta">
+          <div class="project-num-badge">Project 1</div>
+          <div class="handwritten-note">
+            <span>✎ Concept &amp; Packaging Design</span>
+          </div>
+        </div>
+
+        <!-- Twee kolommen: Beeld & Tekst van het eindproduct -->
+        <div class="project-showcase-grid">
+          <div class="project-image-box">
+            <!-- Geen afknipping, geen witte rand, geen punaise, puur de foto zelf -->
+            <img src="images/myphoto01.png" alt="Project 1: Supplementenflacons met Social boost, Maximize productivity, Family visit TO GO" class="project-main-photo zoomable-img" data-caption="Prototype: Flacons van het 'Ideaalbeeld' — Social Boost, Maximize Productivity &amp; Family Visit TO GO (klik op het kruisje om te sluiten)">
+            <div class="click-to-zoom-badge">
+            </div>
+          </div>
+
+          <div class="project-content-box">
+            <h1 class="project-title font-serif">Hoe ziet “goed genoeg” eruit?</h1>
+            
+            <div class="project-body-text">
+              <p>
+                In de huidige samenleving worden mensen constant gedwongen om het ideaalbeeld na te streven. We worden gedwongen om te presteren op school, een goede baan te vinden, iedereen trots te maken, ga zo maar door. Deze invloeden zijn alleen maar sterker geworden door social media.
+              </p>
+              <p>
+                Het probleem hierbij is dat deze ideaalbeelden gewoonweg onrealistisch zijn. Mensen kunnen alleen verbeteren door fouten te maken. Mensen worden nog net niet in een mal geduwd, er is bijna geen ruimte voor imperfectie. Terwijl wij daar als mens juist heel erg van kunnen leren.
+              </p>
+              <p>
+                Mijn werk richt zich op die strijd van het individu die het ideaalbeeld probeert na te streven, waarbij te zien is dat dit geen gezonde manier van leven is. Wie bepaalt wat “goed genoeg” is? En waarom proberen we dat allemaal te bereiken. Hoe ziet “goed genoeg” eruit?
+              </p>
+            </div>
+
+            <!-- Creatieve, logische plek voor het boek dat je kunt openklikken (coveropenklikken.jpg) -->
+            <div class="book-cover-trigger-card torn-paper-card" id="open-process-book">
+              <div class="washi-tape tape-tr" aria-hidden="true"></div>
+              <div class="book-cover-preview">
+                <img src="images/coveropenklikken.png" alt="Schetsboek cover: klik om het proces en verhaal te openen" class="book-cover-thumb">
+              </div>
+              <div class="book-cover-info">
+                <span class="process-phase-badge">Schetsboek &bull; Proces &amp; Verhaal</span>
+                <button class="btn btn-primary open-book-btn" type="button">
+                  <span>Open Schetsboek (5 pagina's)</span>
+                  <span aria-hidden="true">&rarr;</span>
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Uitklapbaar Schetsboek / Proceslogboek (Geillustreerd met schetsboektekening.png) -->
+        <section id="process-notebook-reader" class="notebook-reader-section" style="display: none;" aria-label="Interactief proces schetsboek">
+          
+          <div class="notebook-wrapper">
+            <!-- Geïllustreerde omlijstingsachtergrond (schetsboektekening.png) -->
+            <div class="notebook-frame-bg" aria-hidden="true"></div>
+
+            <!-- Enige functionele bladerknoppen (knoplinks.png & knoprechts.png) in het midden aan weerszijden -->
+            <button id="book-side-prev" class="notebook-side-btn notebook-side-prev" type="button" aria-label="Vorige bladzijde" disabled>
+              <img src="images/icons/knoplinks.png" alt="Vorige bladzijde">
+            </button>
+            <button id="book-side-next" class="notebook-side-btn notebook-side-next" type="button" aria-label="Volgende bladzijde">
+              <img src="images/icons/knoprechts.png" alt="Volgende bladzijde">
+            </button>
+
+            <!-- Bovenbalk van het schetsboek -->
+            <div class="notebook-top-bar">
+              <div class="notebook-meta">
+              </div>
+              <button id="close-book-btn" class="notebook-close-button" type="button" aria-label="Sluit schetsboek">
+                <span>Sluit Schetsboek</span>
+                <span class="close-symbol">&times;</span>
+              </button>
+            </div>
+
+            <!-- Twee-pagina Spread Viewport -->
+            <div class="notebook-spread-viewport">
+              
+              <!-- Bladzijde 1: Fase 01 (Spiegel-lamp) -->
+              <div class="notebook-spread-page active" data-page="1">
+                <div class="page-sheet page-left">
+                  <div class="page-sheet-content">
+                    <div class="notebook-photo-box">
+                      <img src="images/myphoto04.png" alt="Vroeg idee: prototype van een lamp met spiegels" class="zoomable-img notebook-photo" data-caption="Fase 01: Vroeg idee — De Spiegel-lamp">
+                    </div>
+                  </div>
+                </div>
+                <div class="page-sheet page-right">
+                  <div class="page-sheet-content">
+                    <span class="process-phase-badge">Fase 01 &bull; Het Eerste Idee</span>
+                    <h3 class="notebook-page-heading">De spiegel-lamp</h3>
+                    <p class="notebook-page-text">
+                      Tijdens dit project heb ik verschillende experimenten gedaan. Het begon bij de spiegel-lamp. Deze kwam voort het knolling proces van een lamp. Ik heb de lamp onderzocht en hem gecombineerd meet mijn idee over het ideealbeeld wat er in de wereld rondgaat. Hieruit kwam de spiegel-lamp, waarmee mensen een letterlijke 'spiegel' voor krijgen om naar zichzelf te kijken. Dit duidt op de maatschappelijke druk en zelfreflectie weergegevem in een ruimtelijke installatie.
+                    </p>
+                    <div class="process-learning-box">
+                      <strong>✎ Waarom dit het toch niet werd:</strong>
+                      <p>
+                        Tijdens het maken van het prototype vond ik dat het nog te ver af lag van de boodschap. Dit concept was ook meer een metafoor in plaats van de boodschap die ik wilde overbrengen. Een spiegel staat al voor reflectie, dus dit vond ik iets te direct. Hierdoor heb ik opnieuw gekeken naar mijn idee en iets anders bedacht. 
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bladzijde 2: Fase 02 (Mindmapping) -->
+              <div class="notebook-spread-page" data-page="2">
+                <div class="page-sheet page-left">
+                  <div class="page-sheet-content">
+                    <div class="notebook-photo-box">
+                      <img src="images/myphoto03.png" alt="Onderzoeksproces: Uitgebreide brainstorm en mindmap" class="zoomable-img notebook-photo" data-caption="Fase 02: Mindmapping &amp; Brainstorm">
+                    </div>
+                  </div>
+                </div>
+                <div class="page-sheet page-right">
+                  <div class="page-sheet-content">
+                    <span class="process-phase-badge">Fase 02 &bull; Mindmap Proces</span>
+                    <h3 class="notebook-page-heading">Mindmap voor nieuwe idee</h3>
+                    <p class="notebook-page-text">
+                      Om terug te keren naar de essentie van de vraag <em>“Hoe ziet goed genoeg eruit?”</em> ben ik gaan mindmappen. Hier heb ik nagedacht over alle problemen die in in de maatschappij voorbij komen over het ideaalbeeld: faalangst, sociale bewijsdrang etc. (zie de foto)
+                    </p>
+                    <div class="process-learning-box">
+                      <strong>✎ Het beslissende inzicht:</strong>
+                      <p>
+                        Uit deze mindmap ontstond het idee van de aanpassingen wat mensen bij zichzelf doen. Denk aan botox, maar ook extra vitamine, suplementen. Hier ging ik op aan omdat dit ook te ver kan gaan, daarom zit dit idee goed op het randje. Ik heb gekozen voor de suplementen om vervolgens daar een ander verhaal achter te zetten.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bladzijde 3: De Drie Conceptuele Suplementen -->
+              <div class="notebook-spread-page" data-page="3">
+                <div class="page-sheet page-left">
+                  <div class="page-sheet-content">
+                    <span class="process-phase-badge">Thematische Suplementen &bull; Deel 1</span>
+                    <div class="pillar-mini-card">
+                      <h4 class="pillar-mini-title">01. Social Boost</h4>
+                      <p class="pillar-mini-desc">
+                        "Become social and outgoing" — Een kritische weerspiegeling van de sociale verwachting om altijd energiek, aanwezig en sociaal verbonden te zijn.
+                      </p>
+                      <span class="process-annotation">Notitie: Druk op continue sociale beschikbaarheid</span>
+                    </div>
+                    <div class="pillar-mini-card" style="margin-top: 1.5rem;">
+                      <h4 class="pillar-mini-title">02. Maximize Productivity</h4>
+                      <p class="pillar-mini-desc">
+                        "Get better grades &amp; 400 kauwtabletten" — Het visualiseren van de prestatiedrang op school en werk waar rust als falen wordt ervaren.
+                      </p>
+                      <span class="process-annotation">Notitie: Waar ligt de grens van productiviteit?</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="page-sheet page-right">
+                  <div class="page-sheet-content">
+                    <span class="process-phase-badge">Thematische Pijlers &bull; Deel 2</span>
+                    <div class="pillar-mini-card">
+                      <h4 class="pillar-mini-title">03. Family Visit</h4>
+                      <p class="pillar-mini-desc">
+                        "Become polite and respectful" — De spanning tussen authentiek jezelf zijn en het krampachtig voldoen aan verwachtingen van familie en omgeving.
+                      </p>
+                      <span class="process-annotation">Notitie: Authenticiteit versus conformisme</span>
+                    </div>
+                    <div class="scrapbook-sketch-note" style="margin-top: 1.5rem;">
+                      <strong>✎ Schetsnotitie van Iris:</strong>
+                      <p>
+                        Door deze thema's samen te brengen met de suplementen ben ik door gegaan naar de prototypering, hierdoor hoop ik over te dragen dat ons absurde ideaalbeeld direct zichtbaar te maken.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bladzijde 4: Fase 03 (Vormgeving in Adobe InDesign) -->
+              <div class="notebook-spread-page" data-page="4">
+                <div class="page-sheet page-left">
+                  <div class="page-sheet-content">
+                    <div class="notebook-photo-box">
+                      <img src="images/myphoto02.png" alt="Laatste procesfoto: etiketten ontwerpen in Adobe InDesign en potjes testen" class="zoomable-img notebook-photo" data-caption="Fase 03: Vormgeving in Adobe InDesign &amp; Prototyping">
+                    </div>
+                  </div>
+                </div>
+                <div class="page-sheet page-right">
+                  <div class="page-sheet-content">
+                    <span class="process-phase-badge">Fase 03 &bull; Vormgeving &amp; Prototyping</span>
+                    <h3 class="notebook-page-heading">Van digitaal etiket naar tastbaar prototype</h3>
+                    <blockquote class="iris-process-quote">
+                      Voor het maken van de vitamine potjes heb ik etiketten gemaakt in Adobe InDesign. Hierbij heb ik gekeken naar de kleur en smaak, de hoeveelheden die passen bij het formaat van de potjes en heb ik ook versies TO GO gemaakt, die makkelijk mee te nemen zijn voor onderweg.
+                    </blockquote>
+                    <p class="notebook-page-text">
+                      Door de etiketten grafisch professioneel op te zetten met herkenbare typografie, smaakaanduidingen, ingrediëntenlijsten en 'gebruiksaanwijzingen', ontstaat er een scherpe frictie tussen de gelikte verpakking en de cynische maatschappelijke boodschap. De 'TO GO' editie benadrukt hoe mensen hun sociale masker letterlijk overal mee naartoe dragen.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bladzijde 5: Conclusie & Ontwerpnotitie -->
+              <div class="notebook-spread-page" data-page="5">
+                <div class="page-sheet page-left">
+                  <div class="page-sheet-content">
+                    <span class="process-phase-badge">Conclusie &bull; Eindreflectie</span>
+                    <h3 class="notebook-page-heading">Wat dit project vertelt</h3>
+                    <p class="notebook-page-text">
+                      Met <em>Hoe ziet “goed genoeg” eruit?</em> onderzoek ik de grens tussen zelfontplooiing en maatschappelijke dwang. Als ontwerper vind ik het belangrijk om niet alleen visueel aantrekkelijk werk te leveren, maar juist vragen op te roepen over de patronen waarin we met z'n allen vastzitten.
+                    </p>
+                    <div style="margin-top: 1.5rem;">
+                      <a href="contact.html" class="btn btn-primary">
+                        <span>Praat mee over dit project</span>
+                        <span aria-hidden="true">&rarr;</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="page-sheet page-right">
+                  <div class="page-sheet-content">
+                    <span class="process-phase-badge">✎ Ontwerpnotitie</span>
+                    <div class="process-summary-note" style="margin-top: 0.5rem;">
+                      <strong>Ontwerpnotitie van Iris:</strong> Door deze ongemakkelijke maatschappelijke verwachtingen tastbaar te maken in de vorm van ogenschijnlijk alledaagse vitamine- en supplementenflacons, worden toeschouwers geconfronteerd met het absurde van onze prestatiemaatschappij. Imperfectie is geen defect, maar juist de essentie van menselijke groei.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Visuele pagina indicator onderaan (alleen voor het zicht, niet klikbaar) -->
+            <div class="notebook-bottom-nav">
+              <div class="notebook-dots-container" id="notebook-dots" aria-hidden="true">
+                <span class="notebook-dot-badge active" data-page="1">01</span>
+                <span class="notebook-dot-badge" data-page="2">02</span>
+                <span class="notebook-dot-badge" data-page="3">03</span>
+                <span class="notebook-dot-badge" data-page="4">04</span>
+                <span class="notebook-dot-badge" data-page="5">05</span>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+      </article>
+
+    </main>
+
+    <!-- Marquee Divider -->
+    <div class="marquee-wrapper" aria-hidden="true">
+      <div class="marquee-content">
+        <span class="marquee-text">
+          <span>Meer projecten binnenkort</span>
+          <span class="marquee-star">✦</span>
+          <span>Storytelling &bull; Visuele Vormgeving &bull; Menselijk Gedrag</span>
+          <span class="marquee-star">✦</span>
+          <span>Avans Hogeschool Breda</span>
+          <span class="marquee-star">✦</span>
+        </span>
+        <span class="marquee-text">
+          <span>Meer projecten binnenkort</span>
+          <span class="marquee-star">✦</span>
+          <span>Storytelling &bull; Visuele Vormgeving &bull; Menselijk Gedrag</span>
+          <span class="marquee-star">✦</span>
+          <span>Avans Hogeschool Breda</span>
+          <span class="marquee-star">✦</span>
+        </span>
+      </div>
+    </div>
+
+    <!-- Aankomende Projecten Grid (Coming Soon conform verzoek) -->
+    <section class="upcoming-projects-section">
+      <div style="text-align: center; margin-bottom: 2.5rem;">
+        <div class="badge-subtitel">In Ontwikkeling</div>
+        <h2 style="font-family: var(--font-subtitle); font-size: 2rem; margin-top: 0.75rem;">Volgende Verhalen</h2>
+      </div>
+
+      <div class="upcoming-grid">
+        <div class="upcoming-card torn-paper-card">
+          <div class="upcoming-card-title">Project 2</div>
+          <div class="upcoming-status">✎ Coming Soon</div>
+          <div style="margin: 1rem 0;">
+            <svg class="book-icon-svg" viewBox="0 0 24 24">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            </svg>
+          </div>
+        </div>
+
+        <div class="upcoming-card torn-paper-card">
+          <div class="upcoming-card-title">Project 3</div>
+          <div class="upcoming-status">✎ Coming Soon</div>
+          <div style="margin: 1rem 0;">
+            <svg class="book-icon-svg" viewBox="0 0 24 24">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            </svg>
+          </div>
+        </div>
+
+        <div class="upcoming-card torn-paper-card">
+          <div class="upcoming-card-title">Project 4</div>
+          <div class="upcoming-status">✎ Coming Soon</div>
+          <div style="margin: 1rem 0;">
+            <svg class="book-icon-svg" viewBox="0 0 24 24">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox Modal voor alle pagina-afbeeldingen met kruisje rechtsboven -->
+    <div id="lightbox-modal" class="lightbox-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Afbeelding vergroten">
+      <div class="lightbox-backdrop"></div>
+      <div class="lightbox-dialog">
+        <button id="lightbox-close" class="lightbox-close-btn" aria-label="Sluit vergroting (Esc)">&times;</button>
+        <div class="lightbox-media-wrap">
+          <img id="lightbox-img" src="" alt="" class="lightbox-full-img">
+        </div>
+        <div id="lightbox-caption" class="lightbox-caption"></div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <img src="images/logo.png" alt="Logo Iris Zwaan" class="footer-logo">
+          <span class="footer-tagline">Ontwerp &bull; Storytelling &bull; Verbeelding</span>
+        </div>
+
+        <ul class="footer-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="about.html">About Me</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="footer-copy">
+          &copy; 2026 Iris Zwaan &bull; Avans Hogeschool Breda &bull; CMD
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Hamburger Overlay Navigatie -->
+  <div id="nav-overlay" class="nav-overlay" role="dialog" aria-modal="true" aria-label="Navigatiemenu">
+    <div class="nav-overlay-header">
+      <div class="site-logo">
+        <img src="images/logo.png" alt="Logo Iris Zwaan" class="logo-img">
+      </div>
+      <button id="menu-close" class="close-btn" aria-label="Sluit menu">&times;</button>
+    </div>
+
+    <div class="nav-overlay-content">
+      <ul class="overlay-menu-list">
+        <li class="overlay-menu-item">
+          <a href="index.html" class="overlay-menu-link">
+            <span class="link-num">01</span>
+            <span>Home</span>
+          </a>
+        </li>
+        <li class="overlay-menu-item">
+          <a href="portfolio.html" class="overlay-menu-link">
+            <span class="link-num">02</span>
+            <span>Portfolio</span>
+          </a>
+        </li>
+        <li class="overlay-menu-item">
+          <a href="about.html" class="overlay-menu-link">
+            <span class="link-num">03</span>
+            <span>About Me</span>
+          </a>
+        </li>
+        <li class="overlay-menu-item">
+          <a href="contact.html" class="overlay-menu-link">
+            <span class="link-num">04</span>
+            <span>Contact</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="nav-overlay-footer">
+      <div>CMD Student &bull; Avans Hogeschool Breda</div>
+      <div class="nav-socials">
+        <a href="mailto:irislouisezwaan@gmail.com">irislouisezwaan@gmail.com</a>
+        <span>&bull;</span>
+        <span>Instagram (Coming Soon)</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
