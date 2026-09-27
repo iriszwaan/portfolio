@@ -33,31 +33,32 @@
     <div class="portfolio-page-header">
       <div class="badge-subtitel" style="margin-bottom: 1rem;">Geselecteerd Werk</div>
       <h1 class="section-title">Portfolio</h1>
-      <p class="section-subtitle">Onderzoek, visuele verhalen en maatschappelijk conceptontwerp</p>
+      <p class="section-subtitle">Ik ontwerp om te begrijpen wat de mens beweegt en de verhalen daarachter te vertellen.</p>
     </div>
 
     <!-- Project 1 Spread (Conform styleguide wireframe) -->
     <main class="book-spread-container">
 
-      <!-- Project Navigatie Knoppen Bovenaan (knoplinks.png & knoprechts.png) -->
+      <!-- Vaste Project Navigatie Knoppen Bovenaan (knoplinks.png & knoprechts.png) -->
       <nav class="project-nav-bar" aria-label="Project navigatie bovenaan">
-        <button id="prev-project-btn-top" class="project-nav-btn prev-project-trigger" aria-label="Vorig project" data-tooltip="Vorig project">
+        <button id="prev-project-btn-top" class="project-nav-btn prev-project-trigger" type="button" aria-label="Vorig project" data-tooltip="Vorig project">
           <img src="images/icons/knoplinks.png" alt="Pijl vorig project" class="nav-arrow-img">
           <span class="nav-btn-text">Vorig project</span>
         </button>
 
         <div class="project-nav-meta">
-          <span class="project-counter-badge">Project <strong>01</strong> / 04</span>
-          <span class="project-active-title">Hoe ziet “goed genoeg” eruit?</span>
+          <span class="project-counter-badge">Project <strong id="project-counter-num">01</strong> / <span id="project-counter-total">03</span></span>
+          <span id="project-active-title" class="project-active-title">Hoe ziet “goed genoeg” eruit?</span>
         </div>
 
-        <button id="next-project-btn-top" class="project-nav-btn next-project-trigger" aria-label="Volgend project" data-tooltip="Volgend project">
+        <button id="next-project-btn-top" class="project-nav-btn next-project-trigger" type="button" aria-label="Volgend project" data-tooltip="Volgend project">
           <span class="nav-btn-text">Volgend project</span>
           <img src="images/icons/knoprechts.png" alt="Pijl volgend project" class="nav-arrow-img">
         </button>
       </nav>
 
-      <article class="book-spread-card">
+      <!-- Project 1 Spread: Hoe ziet goed genoeg eruit? -->
+      <article class="book-spread-card project-card-item active" id="project-1" data-project-num="1" data-project-title="Hoe ziet “goed genoeg” eruit?">
         <!-- Project Kopstuk -->
         <div class="project-header-meta">
           <div class="project-num-badge">Project 1</div>
@@ -72,6 +73,7 @@
             <!-- Geen afknipping, geen witte rand, geen punaise, puur de foto zelf -->
             <img src="images/myphoto01.png" alt="Project 1: Supplementenflacons met Social boost, Maximize productivity, Family visit TO GO" class="project-main-photo zoomable-img" data-caption="Prototype: Flacons van het 'Ideaalbeeld' — Social Boost, Maximize Productivity &amp; Family Visit TO GO (klik op het kruisje om te sluiten)">
             <div class="click-to-zoom-badge">
+              <span>✎ Klik op de foto voor een grotere weergave</span>
             </div>
           </div>
 
@@ -91,7 +93,7 @@
             </div>
 
             <!-- Creatieve, logische plek voor het boek dat je kunt openklikken (coveropenklikken.jpg) -->
-            <div class="book-cover-trigger-card torn-paper-card" id="open-process-book">
+            <div class="book-cover-trigger-card torn-paper-card" id="open-process-book-1" data-notebook="process-notebook-reader-1">
               <div class="washi-tape tape-tr" aria-hidden="true"></div>
               <div class="book-cover-preview">
                 <img src="images/coveropenklikken.png" alt="Schetsboek cover: klik om het proces en verhaal te openen" class="book-cover-thumb">
@@ -109,7 +111,7 @@
         </div>
 
         <!-- Uitklapbaar Schetsboek / Proceslogboek (Geillustreerd met schetsboektekening.png) -->
-        <section id="process-notebook-reader" class="notebook-reader-section" style="display: none;" aria-label="Interactief proces schetsboek">
+        <section id="process-notebook-reader-1" class="notebook-reader-section" style="display: none;" aria-label="Interactief proces schetsboek">
           
           <div class="notebook-wrapper">
             <!-- Geïllustreerde omlijstingsachtergrond (schetsboektekening.png) -->
@@ -297,13 +299,398 @@
 
       </article>
 
+      <!-- Project 2 Spread: Floral Boost (Aanvankelijk verborgen, inschakelbaar via pijltjes) -->
+      <article class="book-spread-card project-card-item" id="project-2" data-project-num="2" data-project-title="Floral Boost" style="display: none;">
+        <!-- Project Kopstuk -->
+        <div class="project-header-meta">
+          <div class="project-num-badge">Project 2</div>
+          <div class="handwritten-note">
+            <span>✎ Brand &amp; Packaging Design</span>
+          </div>
+        </div>
+
+        <!-- Twee kolommen: Beeld & Tekst van het eindproduct -->
+        <div class="project-showcase-grid">
+          <div class="project-image-box">
+            <!-- Multi-foto showcase voor meerdere eindresultaat foto's -->
+            <div class="project-photo-gallery">
+              <!-- Hoofdfoto Blikje -->
+              <div class="project-photo-item">
+                <img src="images/myphotoBlikje.png" alt="Floral Boost — Minimalistisch energie drankje blikje" class="project-main-photo zoomable-img" data-caption="Floral Boost — Blikje verpakking &amp; 3D visualisatie (klik op het kruisje om te sluiten)">
+              </div>
+              <!-- Sub-foto's grid (Poster & Brandbook) -->
+              <div class="project-sub-photos-grid">
+                <img src="images/posterFloralBoost.png" alt="Floral Boost — Poster design" class="project-sub-photo zoomable-img" data-caption="Floral Boost — Campagne Poster Design (klik op het kruisje om te sluiten)">
+                <img src="images/BrandbookFloralBoost.png" alt="Floral Boost — Brandbook &amp; Brand Story" class="project-sub-photo zoomable-img" data-caption="Floral Boost — Brandbook &amp; Brand Story (klik op het kruisje om te sluiten)">
+              </div>
+            </div>
+            <div class="click-to-zoom-badge">
+              <span>✎ Klik op een foto voor een grotere weergave</span>
+            </div>
+          </div>
+
+          <div class="project-content-box">
+            <h1 class="project-title font-serif">Floral Boost</h1>
+            
+            <div class="project-body-text">
+              <p>
+                Voor dit project heb ik een brand gemaakt voor een minimalistisch energie drankje. Om tot dit eindresultaat te komen heb ik mij verdiept in de persoon die dit zou drinken en op die manier ben ik begonnen met schetsen en ideeëen te creeëren.
+              </p>
+              <p>
+                Het is een drankje voor jongeren die willen ontspannen na het sporten voor een frisse floral boost. Voor mijn brand heb ik een keuze gemaakt voor het lettertype, een logo ontworpen en de kleuren die erbij passen. In het brandbook kun je ook de brand story lezen.
+              </p>
+            </div>
+
+            <!-- Creatieve, logische plek voor het schetsboek -->
+            <div class="book-cover-trigger-card torn-paper-card" id="open-process-book-2" data-notebook="process-notebook-reader-2">
+              <div class="washi-tape tape-tr" aria-hidden="true"></div>
+              <div class="book-cover-preview">
+                <img src="images/coveropenklikken.png" alt="Schetsboek cover: klik om het proces van Floral Boost te bekijken" class="book-cover-thumb">
+              </div>
+              <div class="book-cover-info">
+                <span class="process-phase-badge">Schetsboek &bull; Proces &amp; Verhaal</span>
+                <button class="btn btn-primary open-book-btn" type="button">
+                  <span>Open Schetsboek (Floral Boost)</span>
+                  <span aria-hidden="true">&rarr;</span>
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Uitklapbaar Schetsboek / Proceslogboek voor Floral Boost -->
+        <section id="process-notebook-reader-2" class="notebook-reader-section" style="display: none;" aria-label="Interactief proces schetsboek Floral Boost">
+          
+          <div class="notebook-wrapper">
+            <!-- Geïllustreerde omlijstingsachtergrond -->
+            <div class="notebook-frame-bg" aria-hidden="true"></div>
+
+            <!-- Functionele bladerknoppen -->
+            <button class="notebook-side-btn notebook-side-prev" type="button" aria-label="Vorige bladzijde">
+              <img src="images/icons/knoplinks.png" alt="Vorige bladzijde">
+            </button>
+            <button class="notebook-side-btn notebook-side-next" type="button" aria-label="Volgende bladzijde">
+              <img src="images/icons/knoprechts.png" alt="Volgende bladzijde">
+            </button>
+
+            <!-- Bovenbalk van het schetsboek -->
+            <div class="notebook-top-bar">
+              <div class="notebook-meta"></div>
+              <button class="notebook-close-button" type="button" aria-label="Sluit schetsboek">
+                <span>Sluit Schetsboek</span>
+                <span class="close-symbol">&times;</span>
+              </button>
+            </div>
+
+            <!-- Twee-pagina Spread Viewport -->
+            <div class="notebook-spread-viewport">
+              
+              <!-- Bladzijde 1: Fase 01 (Moodboard) -->
+              <div class="notebook-spread-page active" data-page="1">
+                <div class="page-sheet page-left">
+                  <div class="page-sheet-content">
+                    <div class="notebook-photo-box">
+                      <img src="images/moodboardFloralBoost.png" alt="Floral Boost — Moodboard &amp; Visuele Inspiratie" class="zoomable-img notebook-photo" data-caption="Fase 01: Moodboard &amp; Visuele Inspiratie — Floral Boost (klik op het kruisje om te sluiten)">
+                    </div>
+                  </div>
+                </div>
+                <div class="page-sheet page-right">
+                  <div class="page-sheet-content">
+                    <span class="process-phase-badge">Fase 01 &bull; Moodboard &amp; Inspiratie</span>
+                    <h3 class="notebook-page-heading">Doelgroep &amp; Conceptfase</h3>
+                    <p class="notebook-page-text">
+                      Voor het merk Floral Boost heb ik mij verdiept in de leefwereld van jongeren die na het sporten behoefte hebben aan ontspanning en een frisse verkwiking. Via een sfeervol moodboard zijn de stijlelementen verzameld: rustgevende natuurtinten, een botanische sfeer en strakke, minimalistische lijnen.
+                    </p>
+                    <div class="process-learning-box">
+                      <strong>✎ Inzicht uit het moodboard:</strong>
+                      <p>
+                        Het moodboard legde de basis voor het logo, de typografie en de verfijnde kleurkeuze die het minimalistische karakter van de energiedrank versterken.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bladzijde 2: Fase 02 (Drukwerk & Prototyping) -->
+              <div class="notebook-spread-page" data-page="2">
+                <div class="page-sheet page-left">
+                  <div class="page-sheet-content">
+                    <div class="notebook-photo-box">
+                      <img src="images/drukwerkblikje.png" alt="Floral Boost — Drukwerk &amp; Prototyping blikje" class="zoomable-img notebook-photo" data-caption="Fase 02: Drukwerk &amp; Prototyping van het blikje (klik op het kruisje om te sluiten)">
+                    </div>
+                  </div>
+                </div>
+                <div class="page-sheet page-right">
+                  <div class="page-sheet-content">
+                    <span class="process-phase-badge">Fase 02 &bull; Drukwerk &amp; Prototyping</span>
+                    <h3 class="notebook-page-heading">Van etiket naar fysiek product</h3>
+                    <p class="notebook-page-text">
+                      Om het digitale ontwerp tot leven te brengen, zijn er verschillende proefdrukken van het etiket gemaakt. Het etiket is vervolgens op het blikje aangebracht om de schaal, leesbaarheid en de fysieke uitstraling van het merk te testen.
+                    </p>
+                    <div class="process-learning-box">
+                      <strong>✎ Drukwerk ervaring:</strong>
+                      <p>
+                        Door de proefdrukken fysiek op het blikje te ervaren kon de balans tussen de frisse bloemige tinten en de strakke typografie perfect worden afgestemd.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bladzijde 3: Fase 03 (Brandbook & Brand Story) -->
+              <div class="notebook-spread-page" data-page="3">
+                <div class="page-sheet page-left">
+                  <div class="page-sheet-content">
+                    <span class="process-phase-badge">Fase 03 &bull; Brandbook &amp; Identiteit</span>
+                    <h3 class="notebook-page-heading">Het Brandbook &amp; De Story</h3>
+                    <p class="notebook-page-text">
+                      In het officiële brandbook van Floral Boost staan alle visuele keuzes vastgelegd. Dit omvat de typografie, het speciaal ontworpen logo en de kenmerkende kleurenpaletten.
+                    </p>
+                    <div class="pillar-mini-card" style="margin-top: 1.5rem;">
+                      <h4 class="pillar-mini-title">Typografie &amp; Kleur</h4>
+                      <p class="pillar-mini-desc">
+                        Een strakke, eigentijdse lettertypekeuze gecombineerd met frisse, botanische pasteltinten die rust en vernieuwende energie uitstralen.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="page-sheet page-right">
+                  <div class="page-sheet-content">
+                    <span class="process-phase-badge">✎ Brand Story</span>
+                    <div class="scrapbook-sketch-note" style="margin-top: 0.5rem;">
+                      <strong>Ontwerpnotitie van Iris:</strong>
+                      <p>
+                        Floral Boost is ontworpen als het ideale ontspanningsdrankje na een workout. In het brandbook kun je de volledige brand story lezen en ontdekken hoe elk ontwerpelement bijdraagt aan de merkbeleving.
+                      </p>
+                    </div>
+                    <div style="margin-top: 1.5rem;">
+                      <a href="contact.html" class="btn btn-primary">
+                        <span>Vragen over dit project?</span>
+                        <span aria-hidden="true">&rarr;</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Visuele pagina indicator onderaan -->
+            <div class="notebook-bottom-nav">
+              <div class="notebook-dots-container" aria-hidden="true">
+                <span class="notebook-dot-badge active" data-page="1">01</span>
+                <span class="notebook-dot-badge" data-page="2">02</span>
+                <span class="notebook-dot-badge" data-page="3">03</span>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+      </article>
+
+      <!-- Project 3 Spread: Geforceerd Groen (Aanvankelijk verborgen, inschakelbaar via pijltjes) -->
+      <article class="book-spread-card project-card-item" id="project-3" data-project-num="3" data-project-title="Geforceerd Groen" style="display: none;">
+        <!-- Project Kopstuk -->
+        <div class="project-header-meta">
+          <div class="project-num-badge">Project 3</div>
+          <div class="handwritten-note">
+            <span>✎ Ruimtelijk Concept &amp; Storytelling</span>
+          </div>
+        </div>
+
+        <!-- Twee kolommen: Beeld & Tekst van het eindproduct -->
+        <div class="project-showcase-grid">
+          <div class="project-image-box">
+            <!-- Geen afknipping, geen witte rand, puur de foto zelf -->
+            <img src="images/EindontwerpGG.jpg" alt="Geforceerd Groen — Eindontwerp ruimtelijke installatie boog" class="project-main-photo zoomable-img" data-caption="Geforceerd Groen — Eindontwerp van de ruimtelijke booginstallatie (klik op het kruisje om te sluiten)">
+            <div class="click-to-zoom-badge">
+              <span>✎ Klik op de foto voor een grotere weergave</span>
+            </div>
+
+            <!-- Schetsboek direct onder de foto voor betere balans -->
+            <div class="book-cover-trigger-card torn-paper-card" id="open-process-book-3" data-notebook="process-notebook-reader-3" style="margin-top: 1.5rem;">
+              <div class="washi-tape tape-tr" aria-hidden="true"></div>
+              <div class="book-cover-preview">
+                <img src="images/coveropenklikken.png" alt="Schetsboek cover: klik om het proces van Geforceerd Groen te bekijken" class="book-cover-thumb">
+              </div>
+              <div class="book-cover-info">
+                <span class="process-phase-badge">Schetsboek &bull; Proces &amp; Verhaal</span>
+                <button class="btn btn-primary open-book-btn" type="button">
+                  <span>Open Schetsboek (Geforceerd Groen)</span>
+                  <span aria-hidden="true">&rarr;</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-content-box">
+            <h1 class="project-title font-serif">Geforceerd Groen</h1>
+            
+            <div class="project-body-text">
+              <h3 style="font-family: var(--font-title); font-size: 1.1rem; margin-top: 0; margin-bottom: 0.4rem; color: var(--color-accent);">Vraagstuk</h3>
+              <p>
+                Jongeren hebben niet door hoe de mens controle uitvoert over de natuur. Door de natuur in een kooi te plaatsen en deze te laten schreeuwen om hulp, maken wij hen duidelijk dat de natuur onze hulp nodig heeft om vrij te komen. Uit onderzoek is gebleken dat als mensen empathie hebben voor iets, ze zich sneller gaan inzetten voor een oplossing.
+              </p>
+              <p>
+                Onze idea worth spreading luidt: ‘De mens voert nu controle uit over de natuur, terwijl deze juist zelf moet mogen bepalen waar het groeit.’
+              </p>
+
+              <h3 style="font-family: var(--font-title); font-size: 1.1rem; margin-top: 1.25rem; margin-bottom: 0.4rem; color: var(--color-accent);">Doelgroep</h3>
+              <p>
+                De doelgroep voor dit concept is jongeren. Jongeren zijn vaak zonder gericht doel in de stad. Ze zijn vaak te vinden in groepjes slenterend door de winkelstraten.
+              </p>
+              <p>
+                Wij spelen met ons ontwerp in op het feit dat jongeren vaak doelloos rondlopen en op zoek zijn naar interessante of nieuwe dingen. Onze boog nodigt jongeren uit om erdoorheen te lopen, omdat het er van ver mooi en gezellig uitziet. Hierdoor trekken we ze naar het ontwerp toe en zullen ze de boodschap meekrijgen zodra ze dichtbij komen.
+              </p>
+
+              <h3 style="font-family: var(--font-title); font-size: 1.1rem; margin-top: 1.25rem; margin-bottom: 0.4rem; color: var(--color-accent);">Strategie en impact</h3>
+              <p>
+                We zetten de boog midden op een looproute, zodat het de aandacht van voorbijgangers trekt. Wanneer iemand erdoorheen loopt, wordt diegene helemaal ondergedompeld in de wereld van de gevangen, schreeuwende natuur.
+              </p>
+              <p>
+                Dit zorgt ervoor dat de natuur in de ogen van de voorbijganger gevoelens en een leven krijgt. Hierdoor zullen mensen zich gaan herkennen in de natuur en zullen ze zich gaan inzetten voor de vrijheid van de natuur. Dit zorgt ervoor dat de planten in de stad losgelaten worden om te groeien waar ze willen. Zo creëren wij een groener Tilburg voor iedereen.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Uitklapbaar Schetsboek / Proceslogboek voor Geforceerd Groen -->
+        <section id="process-notebook-reader-3" class="notebook-reader-section" style="display: none;" aria-label="Interactief proces schetsboek Geforceerd Groen">
+          
+          <div class="notebook-wrapper">
+            <!-- Geïllustreerde omlijstingsachtergrond -->
+            <div class="notebook-frame-bg" aria-hidden="true"></div>
+
+            <!-- Functionele bladerknoppen -->
+            <button class="notebook-side-btn notebook-side-prev" type="button" aria-label="Vorige bladzijde">
+              <img src="images/icons/knoplinks.png" alt="Vorige bladzijde">
+            </button>
+            <button class="notebook-side-btn notebook-side-next" type="button" aria-label="Volgende bladzijde">
+              <img src="images/icons/knoprechts.png" alt="Volgende bladzijde">
+            </button>
+
+            <!-- Bovenbalk van het schetsboek -->
+            <div class="notebook-top-bar">
+              <div class="notebook-meta"></div>
+              <button class="notebook-close-button" type="button" aria-label="Sluit schetsboek">
+                <span>Sluit Schetsboek</span>
+                <span class="close-symbol">&times;</span>
+              </button>
+            </div>
+
+            <!-- Twee-pagina Spread Viewport -->
+            <div class="notebook-spread-viewport">
+              
+              <!-- Bladzijde 1: Fase 01 (Prototype) -->
+              <div class="notebook-spread-page active" data-page="1">
+                <div class="page-sheet page-left">
+                  <div class="page-sheet-content">
+                    <div class="notebook-photo-box">
+                      <img src="images/prototypeGG.JPG" alt="Geforceerd Groen — Prototype van de boog" class="zoomable-img notebook-photo" data-caption="Fase 01: Prototype — Geforceerd Groen (klik op het kruisje om te sluiten)">
+                    </div>
+                  </div>
+                </div>
+                <div class="page-sheet page-right">
+                  <div class="page-sheet-content">
+                    <span class="process-phase-badge">Fase 01 &bull; Prototyping</span>
+                    <h3 class="notebook-page-heading">Het Fysieke Prototype</h3>
+                    <p class="notebook-page-text">
+                      Tijdens de prototypefase is onderzocht hoe de kooiconstructie en de ruimtelijke boog vorm moesten krijgen. Door op schaal te testen en met materiaal te experimenteren, werd merkbaar hoe de doorgang voorbijgangers het gevoel geeft opgesloten te zijn in de wereld van de gecontroleerde natuur.
+                    </p>
+                    <div class="process-learning-box">
+                      <strong>✎ Inzicht uit het prototype:</strong>
+                      <p>
+                        Het prototype liet zien dat de boogvorm nieuwsgierigheid opwekt van afstand, maar een beklemmende ervaring oproept wanneer je erdoorheen stapt.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bladzijde 2: Fase 02 (Key Visuals) -->
+              <div class="notebook-spread-page" data-page="2">
+                <div class="page-sheet page-left">
+                  <div class="page-sheet-content">
+                    <div class="notebook-photo-box">
+                      <img src="images/KeyVisualsGG1.png" alt="Geforceerd Groen — Key Visuals" class="zoomable-img notebook-photo" data-caption="Fase 02: Key Visuals &amp; Sfeerbeeld — Geforceerd Groen (klik op het kruisje om te sluiten)">
+                    </div>
+                  </div>
+                </div>
+                <div class="page-sheet page-right">
+                  <div class="page-sheet-content">
+                    <span class="process-phase-badge">Fase 02 &bull; Key Visuals</span>
+                    <h3 class="notebook-page-heading">Visuele Identiteit &amp; Beleving</h3>
+                    <p class="notebook-page-text">
+                      De Key Visuals verbeelden het contrast tussen de natuur in haar natuurlijke vorm en de kunstmatige kooi waarin de mens haar plaatst. De visuele stijl versterkt het geluid en de emotie van de 'schreeuwende natuur'.
+                    </p>
+                    <div class="process-learning-box">
+                      <strong>✎ Boodschap &amp; Impact:</strong>
+                      <p>
+                        Door visuele elementen en geluid te combineren ontstaat er empathie bij de voorbijganger voor de natuur in de stadsomgeving.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bladzijde 3: Fase 03 (Eindreflectie & Idea Worth Spreading) -->
+              <div class="notebook-spread-page" data-page="3">
+                <div class="page-sheet page-left">
+                  <div class="page-sheet-content">
+                    <span class="process-phase-badge">Fase 03 &bull; Concept &amp; Visie</span>
+                    <h3 class="notebook-page-heading">Idea Worth Spreading</h3>
+                    <p class="notebook-page-text">
+                      <em>“De mens voert nu controle uit over de natuur, terwijl deze juist zelf moet mogen bepalen waar het groeit.”</em>
+                    </p>
+                    <p class="notebook-page-text">
+                      Met Geforceerd Groen willen we een bewustwording creëren die leidt tot actie: planten in de stad de ruimte geven om vrij te kunnen groeien.
+                    </p>
+                  </div>
+                </div>
+                <div class="page-sheet page-right">
+                  <div class="page-sheet-content">
+                    <span class="process-phase-badge">✎ Ontwerpnotitie</span>
+                    <div class="scrapbook-sketch-note" style="margin-top: 0.5rem;">
+                      <strong>Ontwerpnotitie van Iris:</strong>
+                      <p>
+                        Door de boog midden op de winkelroute te plaatsen, transformeren we een dagelijkse wandeling van jongeren in een ontmoeting met de gevangen natuur. Samen bouwen we aan een groener Tilburg voor iedereen.
+                      </p>
+                    </div>
+                    <div style="margin-top: 1.5rem;">
+                      <a href="contact.html" class="btn btn-primary">
+                        <span>Vragen over dit project?</span>
+                        <span aria-hidden="true">&rarr;</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Visuele pagina indicator onderaan -->
+            <div class="notebook-bottom-nav">
+              <div class="notebook-dots-container" aria-hidden="true">
+                <span class="notebook-dot-badge active" data-page="1">01</span>
+                <span class="notebook-dot-badge" data-page="2">02</span>
+                <span class="notebook-dot-badge" data-page="3">03</span>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+      </article>
+
     </main>
 
     <!-- Marquee Divider -->
     <div class="marquee-wrapper" aria-hidden="true">
       <div class="marquee-content">
         <span class="marquee-text">
-          <span>Meer projecten binnenkort</span>
+          <span>Bekijk alle projecten</span>
           <span class="marquee-star">✦</span>
           <span>Storytelling &bull; Visuele Vormgeving &bull; Menselijk Gedrag</span>
           <span class="marquee-star">✦</span>
@@ -311,7 +698,7 @@
           <span class="marquee-star">✦</span>
         </span>
         <span class="marquee-text">
-          <span>Meer projecten binnenkort</span>
+          <span>Bekijk alle projecten</span>
           <span class="marquee-star">✦</span>
           <span>Storytelling &bull; Visuele Vormgeving &bull; Menselijk Gedrag</span>
           <span class="marquee-star">✦</span>
@@ -321,46 +708,52 @@
       </div>
     </div>
 
-    <!-- Aankomende Projecten Grid (Coming Soon conform verzoek) -->
+    <!-- Overige Projecten Grid -->
     <section class="upcoming-projects-section">
       <div style="text-align: center; margin-bottom: 2.5rem;">
-        <div class="badge-subtitel">In Ontwikkeling</div>
-        <h2 style="font-family: var(--font-subtitle); font-size: 2rem; margin-top: 0.75rem;">Volgende Verhalen</h2>
+        <div class="badge-subtitel">Andere projecten</div>
+        <h2 style="font-family: var(--font-subtitle); font-size: 2rem; margin-top: 0.75rem;">Bekijk de overige verhalen</h2>
       </div>
 
       <div class="upcoming-grid">
-        <div class="upcoming-card torn-paper-card">
-          <div class="upcoming-card-title">Project 2</div>
-          <div class="upcoming-status">✎ Coming Soon</div>
-          <div style="margin: 1rem 0;">
-            <svg class="book-icon-svg" viewBox="0 0 24 24">
-              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-            </svg>
+        <!-- Sneak Peek 1: Project 1 -->
+        <a href="#project-1" class="sneak-peek-card torn-paper-card" data-project-target="0">
+          <div class="washi-tape tape-tr" aria-hidden="true"></div>
+          <div class="sneak-peek-thumb-box">
+            <img src="images/myphoto01.png" alt="Project 1: Hoe ziet goed genoeg eruit?" class="sneak-peek-img">
           </div>
-        </div>
+          <div class="sneak-peek-info">
+            <span class="sneak-peek-tag">Project 01</span>
+            <h3 class="sneak-peek-title">Hoe ziet “goed genoeg” eruit?</h3>
+            <span class="sneak-peek-link-text">Bekijk project &rarr;</span>
+          </div>
+        </a>
 
-        <div class="upcoming-card torn-paper-card">
-          <div class="upcoming-card-title">Project 3</div>
-          <div class="upcoming-status">✎ Coming Soon</div>
-          <div style="margin: 1rem 0;">
-            <svg class="book-icon-svg" viewBox="0 0 24 24">
-              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-            </svg>
+        <!-- Sneak Peek 2: Project 2 -->
+        <a href="#project-2" class="sneak-peek-card torn-paper-card" data-project-target="1">
+          <div class="washi-tape tape-tr" aria-hidden="true"></div>
+          <div class="sneak-peek-thumb-box">
+            <img src="images/myphotoBlikje.png" alt="Project 2: Floral Boost" class="sneak-peek-img">
           </div>
-        </div>
+          <div class="sneak-peek-info">
+            <span class="sneak-peek-tag">Project 02</span>
+            <h3 class="sneak-peek-title">Floral Boost</h3>
+            <span class="sneak-peek-link-text">Bekijk project &rarr;</span>
+          </div>
+        </a>
 
-        <div class="upcoming-card torn-paper-card">
-          <div class="upcoming-card-title">Project 4</div>
-          <div class="upcoming-status">✎ Coming Soon</div>
-          <div style="margin: 1rem 0;">
-            <svg class="book-icon-svg" viewBox="0 0 24 24">
-              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-            </svg>
+        <!-- Sneak Peek 3: Project 3 -->
+        <a href="#project-3" class="sneak-peek-card torn-paper-card" data-project-target="2">
+          <div class="washi-tape tape-tr" aria-hidden="true"></div>
+          <div class="sneak-peek-thumb-box">
+            <img src="images/EindontwerpGG.jpg" alt="Project 3: Geforceerd Groen" class="sneak-peek-img">
           </div>
-        </div>
+          <div class="sneak-peek-info">
+            <span class="sneak-peek-tag">Project 03</span>
+            <h3 class="sneak-peek-title">Geforceerd Groen</h3>
+            <span class="sneak-peek-link-text">Bekijk project &rarr;</span>
+          </div>
+        </a>
       </div>
     </section>
 
