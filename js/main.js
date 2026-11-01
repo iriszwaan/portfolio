@@ -23,7 +23,7 @@
 
   function applyTheme(theme) {
     const themeImg = themeToggle ? themeToggle.querySelector('img') : null;
-    const bookCoverThumb = document.querySelector('.book-cover-thumb');
+    const bookCoverThumbs = document.querySelectorAll('.book-cover-thumb');
 
     if (theme === 'dark') {
       document.documentElement.setAttribute('data-theme', 'dark');
@@ -35,9 +35,9 @@
         themeImg.src = 'images/icons/nachtmodus.png';
         themeImg.alt = 'Nachtmodus maantje';
       }
-      if (bookCoverThumb) {
-        bookCoverThumb.src = 'images/coveropenklikken-dark.png';
-      }
+      bookCoverThumbs.forEach(thumb => {
+        thumb.src = 'images/coveropenklikken-dark.png';
+      });
     } else {
       document.documentElement.removeAttribute('data-theme');
       if (themeToggle) {
@@ -48,9 +48,9 @@
         themeImg.src = 'images/icons/dagmodus.png';
         themeImg.alt = 'Dagmodus zonnetje';
       }
-      if (bookCoverThumb) {
-        bookCoverThumb.src = 'images/coveropenklikken.png';
-      }
+      bookCoverThumbs.forEach(thumb => {
+        thumb.src = 'images/coveropenklikken.png';
+      });
     }
   }
 
@@ -192,6 +192,11 @@
         }
       });
 
+      const indicator = reader.querySelector('.notebook-indicator-text');
+      if (indicator) {
+        indicator.textContent = `0${currentPage} / 0${totalPages}`;
+      }
+
       if (prevBtn) prevBtn.disabled = false;
       if (nextBtn) nextBtn.disabled = false;
     }
@@ -261,8 +266,9 @@
     });
   });
 
-  // Pijltjestoetsen voor schetsboek als er een open staat
+  // Pijltjestoetsen voor schetsboek als er een open staat (alleen als lightbox niet actief is)
   document.addEventListener('keydown', function (e) {
+    if (lightboxModal && lightboxModal.classList.contains('active')) return;
     activeReaders.forEach(r => {
       if (r && r.isOpen()) {
         if (e.key === 'ArrowLeft') r.prev();
@@ -271,19 +277,116 @@
     });
   });
 
-  // 6. UNIVERSELE LIGHTBOX MODAL (alle afbeeldingen met class .zoomable-img)
+  // 6. UNIVERSELE LIGHTBOX MODAL MET BINNEN-PROJECT GALERIJ NAVIGATIE
   const lightboxModal = document.getElementById('lightbox-modal');
   const lightboxImg = document.getElementById('lightbox-img');
   const lightboxCaption = document.getElementById('lightbox-caption');
   const lightboxClose = document.getElementById('lightbox-close');
+  const lightboxDialog = lightboxModal ? lightboxModal.querySelector('.lightbox-dialog') : null;
 
-  function openLightbox(src, alt, caption) {
-    if (!lightboxModal || !lightboxImg) return;
-    lightboxImg.src = src;
-    lightboxImg.alt = alt || 'Vergrote foto';
-    if (lightboxCaption) {
-      lightboxCaption.textContent = caption || alt || '';
+  // Haal op of maak lightbox pijlknoppen en teller elementen aan
+  let lightboxPrev = document.getElementById('lightbox-prev');
+  let lightboxNext = document.getElementById('lightbox-next');
+  let lightboxCounter = document.getElementById('lightbox-counter');
+
+  if (lightboxDialog) {
+    if (!lightboxPrev) {
+      lightboxPrev = document.createElement('button');
+      lightboxPrev.id = 'lightbox-prev';
+      lightboxPrev.className = 'lightbox-nav-btn lightbox-nav-prev';
+      lightboxPrev.type = 'button';
+      lightboxPrev.setAttribute('aria-label', 'Vorige foto');
+      lightboxPrev.innerHTML = '<img src="images/icons/knoplinks.png" alt="Vorige foto">';
+      lightboxDialog.appendChild(lightboxPrev);
     }
+    if (!lightboxNext) {
+      lightboxNext = document.createElement('button');
+      lightboxNext.id = 'lightbox-next';
+      lightboxNext.className = 'lightbox-nav-btn lightbox-nav-next';
+      lightboxNext.type = 'button';
+      lightboxNext.setAttribute('aria-label', 'Volgende foto');
+      lightboxNext.innerHTML = '<img src="images/icons/knoprechts.png" alt="Volgende foto">';
+      lightboxDialog.appendChild(lightboxNext);
+    }
+    if (!lightboxCounter) {
+      lightboxCounter = document.createElement('div');
+      lightboxCounter.id = 'lightbox-counter';
+      lightboxCounter.className = 'lightbox-counter';
+      lightboxDialog.appendChild(lightboxCounter);
+    }
+  }
+
+  let currentGalleryGroup = [];
+  let currentGalleryIndex = 0;
+
+  function updateLightboxImage(index) {
+    if (!currentGalleryGroup.length) return;
+    if (index < 0) index = currentGalleryGroup.length - 1;
+    if (index >= currentGalleryGroup.length) index = 0;
+    currentGalleryIndex = index;
+
+    const imgEl = currentGalleryGroup[currentGalleryIndex];
+    const src = imgEl.getAttribute('src');
+    const alt = imgEl.getAttribute('alt') || '';
+    let caption = imgEl.getAttribute('data-caption') || alt;
+    caption = caption.replace(/\s*\((?:klik op het kruisje om te sluiten|klik om te sluiten)\)/gi, '').trim();
+
+    if (lightboxImg) {
+      lightboxImg.src = src;
+      lightboxImg.alt = alt || 'Vergrote foto';
+    }
+
+    if (lightboxCaption) {
+      lightboxCaption.textContent = caption || '';
+    }
+
+    if (lightboxCounter) {
+      if (currentGalleryGroup.length > 1) {
+        lightboxCounter.style.display = 'inline-block';
+        lightboxCounter.textContent = `Foto ${currentGalleryIndex + 1} van ${currentGalleryGroup.length}`;
+      } else {
+        lightboxCounter.style.display = 'none';
+      }
+    }
+
+    if (lightboxPrev && lightboxNext) {
+      if (currentGalleryGroup.length > 1) {
+        lightboxPrev.style.display = 'flex';
+        lightboxNext.style.display = 'flex';
+      } else {
+        lightboxPrev.style.display = 'none';
+        lightboxNext.style.display = 'none';
+      }
+    }
+  }
+
+  function openLightbox(imgElement) {
+    if (!lightboxModal || !lightboxImg) return;
+
+    // Bepaal de context / galerijgroep:
+    const projectCard = imgElement.closest('.project-card-item');
+    const notebookSection = imgElement.closest('.notebook-reader-section');
+
+    if (projectCard && !notebookSection) {
+      // Eindwerkafbeeldingen van het huidige actieve project!
+      const showcaseBox = projectCard.querySelector('.project-image-box') || projectCard.querySelector('.project-showcase-grid');
+      if (showcaseBox) {
+        currentGalleryGroup = Array.from(showcaseBox.querySelectorAll('.zoomable-img'));
+      } else {
+        currentGalleryGroup = [imgElement];
+      }
+    } else if (notebookSection) {
+      // Afbeeldingen van het geopende schetsboek
+      currentGalleryGroup = Array.from(notebookSection.querySelectorAll('.zoomable-img'));
+    } else {
+      currentGalleryGroup = [imgElement];
+    }
+
+    const idx = currentGalleryGroup.indexOf(imgElement);
+    currentGalleryIndex = idx !== -1 ? idx : 0;
+
+    updateLightboxImage(currentGalleryIndex);
+
     lightboxModal.classList.add('active');
     lightboxModal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
@@ -296,17 +399,41 @@
     lightboxModal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
     if (lightboxImg) lightboxImg.src = '';
+    currentGalleryGroup = [];
   }
 
-  // Event delegation zodat ook dynamisch toegevoegde of later ingeladen afbeeldingen werken
+  // Pijlknop links (vorige afbeelding)
+  if (lightboxPrev) {
+    lightboxPrev.addEventListener('click', function (e) {
+      e.stopPropagation();
+      updateLightboxImage(currentGalleryIndex - 1);
+    });
+  }
+
+  // Pijlknop rechts (volgende afbeelding)
+  if (lightboxNext) {
+    lightboxNext.addEventListener('click', function (e) {
+      e.stopPropagation();
+      updateLightboxImage(currentGalleryIndex + 1);
+    });
+  }
+
+  // Klikken op de foto zelf in lightbox navigeert ook naar de volgende afbeelding
+  if (lightboxImg) {
+    lightboxImg.addEventListener('click', function (e) {
+      if (currentGalleryGroup.length > 1) {
+        e.stopPropagation();
+        updateLightboxImage(currentGalleryIndex + 1);
+      }
+    });
+  }
+
+  // Event delegation voor klik op alle inzoombare afbeeldingen
   document.addEventListener('click', function (e) {
     const img = e.target.closest('.zoomable-img');
     if (img) {
       e.stopPropagation();
-      const src = img.getAttribute('src');
-      const alt = img.getAttribute('alt') || '';
-      const caption = img.getAttribute('data-caption') || alt;
-      openLightbox(src, alt, caption);
+      openLightbox(img);
     }
   });
 
@@ -323,8 +450,20 @@
   }
 
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && lightboxModal && lightboxModal.classList.contains('active')) {
-      closeLightbox();
+    if (lightboxModal && lightboxModal.classList.contains('active')) {
+      if (e.key === 'Escape') {
+        closeLightbox();
+      } else if (e.key === 'ArrowLeft') {
+        if (currentGalleryGroup.length > 1) {
+          e.preventDefault();
+          updateLightboxImage(currentGalleryIndex - 1);
+        }
+      } else if (e.key === 'ArrowRight') {
+        if (currentGalleryGroup.length > 1) {
+          e.preventDefault();
+          updateLightboxImage(currentGalleryIndex + 1);
+        }
+      }
     }
   });
 
