@@ -84,6 +84,8 @@
           <span class="marquee-star">★</span>
           <span>Project 3: Geforceerd Groen</span>
           <span class="marquee-star">★</span>
+          <span>Project 4: Ripple Media House</span>
+          <span class="marquee-star">★</span>
           <span>Onderzoek &amp; Branding</span>
           <span class="marquee-star">★</span>
           <span>Books are the mirrors of the soul</span>
@@ -95,6 +97,8 @@
           <span>Project 2: Floral Boost</span>
           <span class="marquee-star">★</span>
           <span>Project 3: Geforceerd Groen</span>
+          <span class="marquee-star">★</span>
+          <span>Project 4: Ripple Media House</span>
           <span class="marquee-star">★</span>
           <span>Onderzoek &amp; Branding</span>
           <span class="marquee-star">★</span>
@@ -129,7 +133,7 @@
             <!-- Rechterkolom: Ongeknipte Foto -->
             <div class="teaser-photo-col">
               <div class="teaser-photo-box">
-                <img src="images/myphoto01.png" alt="Project 1 — Supplementenflacons mockups" class="teaser-img zoomable-img" data-caption="Project 1: Hoe ziet goed genoeg eruit? — Flacon Mockups (klik om te sluiten)">
+                <img src="images/myphoto01.png" alt="Project 1 — Supplementenflacons mockups" class="teaser-img zoomable-img" data-caption="Project 1: Hoe ziet goed genoeg eruit? — Flacon Mockups">
               </div>
             </div>
           </div>
@@ -156,7 +160,7 @@
             <!-- Rechterkolom: Ongeknipte Foto -->
             <div class="teaser-photo-col">
               <div class="teaser-photo-box">
-                <img src="images/myphotoBlikje.png" alt="Project 2 — Floral Boost blikje" class="teaser-img zoomable-img" data-caption="Project 2: Floral Boost — Minimalistisch Blikje (klik om te sluiten)">
+                <img src="images/myphotoBlikje.png" alt="Project 2 — Floral Boost blikje" class="teaser-img zoomable-img" data-caption="Project 2: Floral Boost — Minimalistisch Blikje">
               </div>
             </div>
           </div>
@@ -183,7 +187,34 @@
             <!-- Rechterkolom: Ongeknipte Foto -->
             <div class="teaser-photo-col">
               <div class="teaser-photo-box">
-                <img src="images/EindontwerpGG.jpg" alt="Project 3 — Geforceerd Groen ruimtelijke boog" class="teaser-img zoomable-img" data-caption="Project 3: Geforceerd Groen — Ruimtelijke Installatie (klik om te sluiten)">
+                <img src="images/EindontwerpGG.jpg" alt="Project 3 — Geforceerd Groen ruimtelijke boog" class="teaser-img zoomable-img" data-caption="Project 3: Geforceerd Groen — Ruimtelijke Installatie">
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Teaser 4: Project 4 Ripple Media House -->
+        <article class="teaser-card hanging-polaroid-card project-teaser-card" id="home-project-teaser-4" style="display: none;">
+          <div class="washi-tape tape-top" aria-hidden="true"></div>
+
+          <div class="teaser-inner-layout">
+            <!-- Linkerkolom: Tekst & Knop -->
+            <div class="teaser-text-col">
+              <div class="teaser-tag">Project 04</div>
+              <h2 class="teaser-title">Ripple House</h2>
+              <p class="teaser-desc">
+                Opdrachtgever: Ripple Media House &mdash; Een fysieke plek en ritueel om op een laagdrempelige manier kennis te maken met de community en De Bevrijding.
+              </p>
+              <a href="portfolio.html#project-4" class="btn btn-primary">
+                <span>Bekijk Ripple House</span>
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+
+            <!-- Rechterkolom: Ongeknipte Foto -->
+            <div class="teaser-photo-col">
+              <div class="teaser-photo-box">
+                <img src="images/binnenkomstruimte.jpg" alt="Project 4 — Ripple Media House binnenkomst" class="teaser-img zoomable-img" data-caption="Project 4: Ripple Media House — Binnenkomstruimte">
               </div>
             </div>
           </div>
@@ -210,7 +241,7 @@
             <!-- Rechterkolom: Ongeknipte Foto -->
             <div class="teaser-photo-col">
               <div class="teaser-photo-box">
-                <img src="images/me.png" alt="Portret Iris Zwaan" class="teaser-img zoomable-img" data-caption="Portret van Iris Zwaan — CMD Student Avans Breda (klik om te sluiten)">
+                <img src="images/me.png" alt="Portret Iris Zwaan" class="teaser-img zoomable-img" data-caption="Portret van Iris Zwaan — CMD Student Avans Breda">
               </div>
             </div>
           </div>
@@ -219,14 +250,21 @@
       </div>
     </section>
 
-    <!-- Lightbox Modal voor alle pagina-afbeeldingen met kruisje rechtsboven -->
+    <!-- Lightbox Modal voor alle pagina-afbeeldingen met kruisje rechtsboven en navigatiepijltjes -->
     <div id="lightbox-modal" class="lightbox-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Afbeelding vergroten">
       <div class="lightbox-backdrop"></div>
       <div class="lightbox-dialog">
         <button id="lightbox-close" class="lightbox-close-btn" aria-label="Sluit vergroting (Esc)">&times;</button>
+        <button id="lightbox-prev" class="lightbox-nav-btn lightbox-nav-prev" type="button" aria-label="Vorige foto">
+          <img src="images/icons/knoplinks.png" alt="Vorige foto">
+        </button>
+        <button id="lightbox-next" class="lightbox-nav-btn lightbox-nav-next" type="button" aria-label="Volgende foto">
+          <img src="images/icons/knoprechts.png" alt="Volgende foto">
+        </button>
         <div class="lightbox-media-wrap">
           <img id="lightbox-img" src="" alt="" class="lightbox-full-img">
         </div>
+        <div id="lightbox-counter" class="lightbox-counter"></div>
         <div id="lightbox-caption" class="lightbox-caption"></div>
       </div>
     </div>

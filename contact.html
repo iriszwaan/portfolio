@@ -169,14 +169,21 @@
       </div>
     </footer>
 
-    <!-- Lightbox Modal voor eventuele afbeeldingen met kruisje rechtsboven -->
+    <!-- Lightbox Modal voor alle pagina-afbeeldingen met kruisje rechtsboven en navigatiepijltjes -->
     <div id="lightbox-modal" class="lightbox-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Afbeelding vergroten">
       <div class="lightbox-backdrop"></div>
       <div class="lightbox-dialog">
         <button id="lightbox-close" class="lightbox-close-btn" aria-label="Sluit vergroting (Esc)">&times;</button>
+        <button id="lightbox-prev" class="lightbox-nav-btn lightbox-nav-prev" type="button" aria-label="Vorige foto">
+          <img src="images/icons/knoplinks.png" alt="Vorige foto">
+        </button>
+        <button id="lightbox-next" class="lightbox-nav-btn lightbox-nav-next" type="button" aria-label="Volgende foto">
+          <img src="images/icons/knoprechts.png" alt="Volgende foto">
+        </button>
         <div class="lightbox-media-wrap">
           <img id="lightbox-img" src="" alt="" class="lightbox-full-img">
         </div>
+        <div id="lightbox-counter" class="lightbox-counter"></div>
         <div id="lightbox-caption" class="lightbox-caption"></div>
       </div>
     </div>
